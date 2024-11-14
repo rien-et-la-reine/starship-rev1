@@ -1,0 +1,5 @@
+config SHIELD_STARSHIP_LEFT
+	def_bool $(shields_list_contains,starship_left)
+
+config SHIELD_STARSHIP_RIGHT
+	def_bool $(shields_list_contains,starship_right)

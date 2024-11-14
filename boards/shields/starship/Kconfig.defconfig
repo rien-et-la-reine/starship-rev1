@@ -1,0 +1,16 @@
+if SHIELD_STARSHIP_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "Starship Rev.1"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+endif
+
+if SHIELD_STARSHIP_LEFT || SHIELD_STARSHIP_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif

@@ -1,0 +1,11 @@
+file_format: "1"
+id: starship
+name: Starship
+type: shield
+url: https://github.com/rien-et-la-reine/starship-rev1
+requires: [pro_micro]
+features:
+	- keys
+siblings:
+	- starship_left
+	- starship_right
