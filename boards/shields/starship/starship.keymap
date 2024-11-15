@@ -12,6 +12,8 @@
 				&kp GRAVE  &kp Q   &kp S     &kp D       &kp F     &kp G                       &kp H   &kp J     &kp K      &kp L     &kp P     &kp BSLH
 				&kp TAB    &kp A   &kp X     &kp C       &kp V     &kp B                       &kp N   &kp M     &kp COMMA  &kp DOT   &kp SEMI  &kp APOS 
 				&kp DEL    &kp Z   &kp HOME  &bt BT_CLR_ALL  &kp ESC                                       &kp LALT  &kp LCTRL  &kp LBKT  &kp RBKT  &kp FSLH 
+				&kp SPACE  &kp BSPC
+				&kp LSHIFT  &kp ENTER
 			>;
 		};
 	};
