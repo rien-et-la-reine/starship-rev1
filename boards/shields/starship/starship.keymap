@@ -24,7 +24,7 @@
 &kp F1          &kp F2  &kp N2      &kp N3        &kp N4      &kp N5                       &kp N6        &kp N7        &kp N8    &kp N9      &kp F11  &kp F12
 &kp MINUS       &kp N1  &none       &kp C_PREV    &kp C_PP    &kp C_NEXT                   &kp C_VOL_UP  &kp C_VOL_DN  &kp UP    &kp C_MUTE  &kp N0   &kp EQUAL  
 &bt BT_CLR_ALL  &none   &bt BT_PRV  &bt BT_SEL 0  &bt BT_NXT                                             &kp LEFT      &kp DOWN  &kp RIGHT   &none    &none  
-                                                                        &kp LCTRL        &none  
+                                                                        &kp LCTRL        &studio_unlock  
                                                                         &kp LSHIFT       &trans 
       >;
     };
