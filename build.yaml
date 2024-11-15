@@ -22,7 +22,5 @@ shield: [ "starship_left", "starship_right" ]
 include:
   - board: nice_nano_v2
     shield: starship_left
-    cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
-    artifact-name: starship_left_with_logging
   - board: nice_nano_v2
     shield: starship_right
