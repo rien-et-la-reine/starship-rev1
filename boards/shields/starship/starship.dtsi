@@ -1,14 +1,14 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "starship-layouts.dtsi"
 
-&physical_layout0 {
+&default_layout {
 	transform = <&default_transform>;
 };
 
 / {
 	chosen {
 		zmk,kscan = &kscan0;
-		zmk,physical-layout = &physical_layout0;
+		zmk,physical-layout = &default_layout;
 	};
 	
 	default_transform: keymap_transform0 {
