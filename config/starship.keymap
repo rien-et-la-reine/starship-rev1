@@ -66,26 +66,16 @@
             bindings = <&kp SLASH>, <&kp EXCL>;
 
             #binding-cells = <0>;
-            mods = <(MOD_RCTL)>;
+            mods = <(MOD_LCTL)>;
         };
 
-        pleq: pleq {
+        minpl: minpl {
             compatible = "zmk,behavior-mod-morph";
-            label = "PLEQ";
-            bindings = <&kp EQUAL>, <&kp LS(EQUAL)>;
+            label = "MINPL";
+            bindings = <&kp MINUS>, <&kp LS(EQUAL)>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
-        minpleq: minpleq {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MINPLEQ";
-            bindings = <&kp MINUS>, <&pleq>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_LALT)>;
-            keep-mods = <(MOD_LALT)>;
+            mods = <(MOD_LCTL)>;
         };
     };
 
@@ -95,12 +85,12 @@
         default_layer {
             display-name = "base";
             bindings = <
-                       &kp W        &kp E          &kp R         &kp T        &kp Y           &kp U         &kp I          &kp O
-&none     &kp Q        &hml LALT S  &hsl LSHIFT D  &hml LCTRL F  &kp G        &kp H           &hmr RCTRL J  &hsr RSHIFT K  &hmr RALT L  &kp P           &none
-&minpleq  &hml LGUI A  &kp X        &kp C          &kp V         &kp B        &kp N           &kp M         &kp COMMA      &kp DOT      &hmr RGUI SEMI  &kp APOS
-&none     &kp Z        &none        &none          &none                                      &none         &none          &none        &interrobang    &none
-                                                                 &kp SPACE    &kp BSPC
-                                                                 &lt 1 TAB    &lt NUMROW RET
+                     &kp W        &kp E          &kp R         &kp T        &kp Y           &kp U         &kp I          &kp O
+&none   &kp Q        &hml LALT S  &hsl LSHIFT D  &hml LCTRL F  &kp G        &kp H           &hmr RCTRL J  &hsr RSHIFT K  &hmr RALT L  &kp P           &none
+&minpl  &hml LGUI A  &kp X        &kp C          &kp V         &kp B        &kp N           &kp M         &kp COMMA      &kp DOT      &hmr RGUI SEMI  &kp APOS
+&none   &kp Z        &none        &none          &none                                      &none         &none          &none        &interrobang    &none
+                                                               &kp SPACE    &kp BSPC
+                                                               &lt 1 TAB    &lt NUMROW RET
             >;
         };
 
