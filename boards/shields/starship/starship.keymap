@@ -8,12 +8,6 @@
 #define KEYS_R 4 5 6 7 14 15 16 17 18 19 26 27 28 29 30 31 37 38 39 40 41
 #define THUMBS 42 43 44 45
 
-&mt { //used for shift modtap since require-prior-idle-ms on homerow shift can slow down typing  (not sure I type fast enough for that to be an issue though)
-  tapping-term-ms = <200>; // This is the value already set by default
-  flavor = "balanced";
-  quick-tap-ms = <175>;
-};
-
 / {
   behaviors {
     hml: home_row_mod_left {
@@ -38,6 +32,27 @@
       hold-trigger-key-positions = < KEYS_L THUMBS>; // List of keys on the left side of the keyboard
       hold-trigger-on-release;
     };
+    //same as home row mods but without require-prior-idle-ms and a (very slightly) faster tapping term for shift
+    hsl: home_row_shift_left {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <200>;
+      quick-tap-ms = <175>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = < KEYS_R THUMBS>; // List of keys on the right side of the keyboard
+      hold-trigger-on-release;
+    };
+    hsr: home_row_shift_right {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <200>;
+      quick-tap-ms = <175>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = < KEYS_L THUMBS>; // List of keys on the left side of the keyboard
+      hold-trigger-on-release;
+    };
   };
 
   keymap {
@@ -47,7 +62,7 @@
       display-name = "base";
       bindings = <
                          &kp W           &kp E            &kp R          &kp T               &kp Y          &kp U            &kp I            &kp O  
-&none      &kp Q         &hml LALT S     &mt LSHIFT D     &hml LCTRL F   &kp G               &kp H          &hmr RCTRL J     &mt RSHIFT K     &hmr RALT L     &kp P             &none
+&none      &kp Q         &hml LALT S     &hsl LSHIFT D    &hml LCTRL F   &kp G               &kp H          &hmr RCTRL J     &hsr RSHIFT K    &hmr RALT L     &kp P             &none
 &gresc     &hml LGUI A   &kp X           &kp C            &kp V          &kp B               &kp N          &kp M            &kp COMMA        &kp DOT         &hmr RGUI SEMI    &kp APOS  
 &none      &kp Z         &none           &none            &none                                             &none            &none            &none           &kp FSLH          &none  
                                                                          &lt NUMROW TAB      &kp BSPC  
