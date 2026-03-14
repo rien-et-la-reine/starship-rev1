@@ -47,9 +47,9 @@
       display-name = "base";
       bindings = <
                          &kp W           &kp E            &kp R          &kp T               &kp Y          &kp U            &kp I            &kp O  
-&none      &kp Q         &hml LALT S     &mt LSHIFT D     &hml LCTRL F   &kp G               &kp H          &hmr RCTRL J     &mt RSHIFT K     &hmr RALT L     &hmr RGUI P     &none
-&gresc     &hml LGUI A   &kp X           &kp C            &kp V          &kp B               &kp N          &kp M            &kp COMMA        &kp DOT         &kp SEMI        &kp APOS  
-&none      &kp Z         &none           &none            &none                                             &none            &none            &none           &kp FSLH        &none  
+&none      &kp Q         &hml LALT S     &mt LSHIFT D     &hml LCTRL F   &kp G               &kp H          &hmr RCTRL J     &mt RSHIFT K     &hmr RALT L     &kp P             &none
+&gresc     &hml LGUI A   &kp X           &kp C            &kp V          &kp B               &kp N          &kp M            &kp COMMA        &kp DOT         &hmr RGUI SEMI    &kp APOS  
+&none      &kp Z         &none           &none            &none                                             &none            &none            &none           &kp FSLH          &none  
                                                                          &lt NUMROW TAB      &kp BSPC  
                                                                          &kp SPACE           &lt NUMROW RET  
       >;
