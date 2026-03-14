@@ -65,9 +65,9 @@
                                                           &kp LSHIFT       &trans 
       >;
     };
-    layer_2 { display-name = "reserved"; };
-    layer_3 { display-name = "reserved"; };
-    layer_4 { display-name = "reserved"; };
-    layer_5 { display-name = "reserved"; };
+    layer_2 { display-name = "reserved"; bindings = <>; };
+    layer_3 { display-name = "reserved"; bindings = <>; };
+    layer_4 { display-name = "reserved"; bindings = <>; };
+    layer_5 { display-name = "reserved"; bindings = <>; };
   };
 };
