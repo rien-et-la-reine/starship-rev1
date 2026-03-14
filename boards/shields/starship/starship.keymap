@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define NUMROW 1 
-#define EMPTY &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+
 #define KEYS_L 0 1 2 3 8 9 10 11 12 13 20 21 22 23 24 25 32 33 34 35 36
 #define KEYS_R 4 5 6 7 14 15 16 17 18 19 26 27 28 29 30 31 37 38 39 40 41
 #define THUMBS 42 43 44 45
@@ -65,9 +65,9 @@
                                                           &kp LSHIFT       &trans 
       >;
     };
-    layer_2 { display-name = "reserved"; bindings = < EMPTY >; };
-    layer_3 { display-name = "reserved"; bindings = < EMPTY >; };
-    layer_4 { display-name = "reserved"; bindings = < EMPTY >; };
-    layer_5 { display-name = "reserved"; bindings = < EMPTY >; };
+    layer_2 { status = "reserved"; };
+    layer_3 { status = "reserved"; };
+    layer_4 { status = "reserved"; };
+    layer_5 { status = "reserved"; };
   };
 };
