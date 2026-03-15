@@ -125,20 +125,20 @@
 &none    &none     &kp LALT  &kp LSHIFT  &kp LCTRL  &none    &kp HOME     &kp LBRC  &kp RBRC  &kp GT    &kp UP    &none
 &kp DEL  &kp LGUI  &none     &none       &none      &none    &kp END      &kp LPAR  &kp RPAR  &kp LEFT  &kp DOWN  &kp RIGHT
 &none    &none     &none     &none       &none                            &none     &none     &none     &none     &none
-                                                    &none    &key_repeat
+                                                    &to 4    &key_repeat
                                                     &none    &none
             >;
         };
 
-        layer_4 {
-            display-name = "layer 4";
+        game {
+            display-name = "gamepad";
             bindings = <
-                       &kp N7  &kp N8  &kp N9  &gresc        &kp BSLH        &kp LBKT  &kp RBKT  &kp LT
-&none       &kp PG_UP  &kp N4  &kp N5  &kp N6  &kp EQUAL     &kp FSLH        &kp LBRC  &kp RBRC  &kp GT    &kp UP           &none
-&caps_word  &kp N0     &kp N1  &kp N2  &kp N3  &kp HOME      &kp END         &kp LPAR  &kp RPAR  &kp LEFT  &kp DOWN         &kp RIGHT
-&none       &kp PG_DN  &none   &none   &none                                 &none     &none     &none     &kp LC(LA(DEL))  &none
-                                               &kp LGUI      &studio_unlock
-                                               &kp LSHIFT    &trans
+              &none  &none  &none  &none    &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &to 0
+&none  &none  &none  &none  &none                  &none  &none  &none  &none  &none
+                                   &none    &none
+                                   &none    &none
             >;
         };
 
