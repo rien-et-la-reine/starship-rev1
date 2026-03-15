@@ -97,36 +97,36 @@
         num {
             display-name = "numpad";
             bindings = <
-                    &kp N7  &kp N8  &kp N9  &kp MINUS    &none  &none      &none     &none
-&none       &none   &kp N4  &kp N5  &kp N6  &kp EQUAL    &none  &kp RSHFT  &kp LALT  &none  &none        &none
-&caps_word  &kp N0  &kp N1  &kp N2  &kp N3  &none        &none  &none      &none     &none  &key_repeat  &studio_unlock
-&none       &none   &none   &none   &none                       &none      &none     &none  &none        &none
-                                            &kp SPACE    &none
-                                            &kp BSPC     &none
+                             &kp N7  &kp N8  &kp N9  &kp MINUS          &none  &none      &none      &none
+&none         &kp KP_DIVIDE  &kp N4  &kp N5  &kp N6  &kp EQUAL          &none  &kp RCTRL  &kp RSHFT  &kp RALT  &none     &none
+&kp KP_ENTER  &kp N0         &kp N1  &kp N2  &kp N3  &kp KP_MULTIPLY    &none  &none      &none      &none     &kp RGUI  &studio_unlock
+&none         &kp KP_DOT     &none   &none   &none                             &none      &none      &none     &none     &none
+                                                     &kp SPACE          &none
+                                                     &kp BSPC           &none
             >;
         };
 
         sym {
             display-name = "symbols";
             bindings = <
-                       &kp N7  &kp N8  &kp N9  &gresc        &kp BSLH  &kp LBKT  &kp RBKT  &kp LT
-&none       &kp PG_UP  &kp N4  &kp N5  &kp N6  &kp EQUAL     &kp FSLH  &kp LBRC  &kp RBRC  &kp GT    &kp UP           &none
-&caps_word  &kp N0     &kp N1  &kp N2  &kp N3  &kp HOME      &kp END   &kp LPAR  &kp RPAR  &kp LEFT  &kp DOWN         &kp RIGHT
-&none       &kp PG_DN  &none   &none   &none                           &none     &none     &none     &kp LC(LA(DEL))  &none
-                                               &kp LGUI      &none
-                                               &kp LSHIFT    &none
+                       &kp LS(N7)  &kp LS(N8)  &none       &none            &none  &none      &none      &none
+&none       &none      &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp EQUAL        &none  &kp RCTRL  &kp RSHFT  &kp RALT  &none     &none
+&caps_word  &kp GRAVE  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp BACKSLASH    &none  &none      &none      &none     &kp RGUI  &none
+&none       &none      &none       &none       &none                               &none      &none      &none     &none     &none
+                                                           &none            &none
+                                                           &none            &none
             >;
         };
 
         nav {
             display-name = "navigation";
             bindings = <
-              &none  &none     &none       &none    &none     &kp LBKT  &kp RBKT  &kp LT
-&none  &none  &none  &kp LGUI  &kp LSHIFT  &none    &kp HOME  &kp LBRC  &kp RBRC  &kp GT    &kp UP           &none
-&none  &none  &none  &none     &none       &none    &kp END   &kp LPAR  &kp RPAR  &kp LEFT  &kp DOWN         &kp RIGHT
-&none  &none  &none  &none     &none                          &none     &none     &none     &kp LC(LA(DEL))  &none
-                                           &none    &gresc
-                                           &none    &none
+                   &none     &none       &none      &none    &gresc       &kp LBKT  &kp RBKT  &kp LT
+&none    &none     &kp LALT  &kp LSHIFT  &kp LCTRL  &none    &kp HOME     &kp LBRC  &kp RBRC  &kp GT    &kp UP    &none
+&kp DEL  &kp LGUI  &none     &none       &none      &none    &kp END      &kp LPAR  &kp RPAR  &kp LEFT  &kp DOWN  &kp RIGHT
+&none    &none     &none     &none       &none                            &none     &none     &none     &none     &none
+                                                    &none    &key_repeat
+                                                    &none    &none
             >;
         };
 
