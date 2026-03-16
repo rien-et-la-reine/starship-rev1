@@ -77,6 +77,23 @@
             #binding-cells = <0>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
+
+        tabesc: tabesc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TABESC";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&kp ESC>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        splitrn {
+            bindings = <&kp ENTER>;
+            key-positions = <20 13 10 11>;
+            layers = <5>;
+        };
     };
 
     keymap {
@@ -85,12 +102,12 @@
         base {
             display-name = "alphas";
             bindings = <
-                     &kp W        &kp E          &kp R         &kp T        &kp Y           &kp U         &kp I          &kp O
-&none   &kp Q        &hml LALT S  &hsl LSHIFT D  &hml LCTRL F  &kp G        &kp H           &hmr RCTRL J  &hsr RSHIFT K  &hmr RALT L  &kp P           &none
-&minpl  &hml LGUI A  &kp X        &kp C          &kp V         &kp B        &kp N           &kp M         &kp COMMA      &kp DOT      &hmr RGUI SEMI  &kp APOS
-&none   &kp Z        &none        &none          &none                                      &none         &none          &none        &interrobang    &none
+                     &kp W        &kp E          &kp R         &kp T        &kp Y       &kp U         &kp I          &kp O
+&none   &kp Q        &hml LALT S  &hsl LSHIFT D  &hml LCTRL F  &kp G        &kp H       &hmr RCTRL J  &hsr RSHIFT K  &hmr RALT L  &kp P           &none
+&minpl  &hml LGUI A  &kp X        &kp C          &kp V         &kp B        &kp N       &kp M         &kp COMMA      &kp DOT      &hmr RGUI SEMI  &kp APOS
+&none   &kp Z        &none        &none          &none                                  &none         &none          &none        &interrobang    &none
                                                                &kp SPACE    &lt 2 BSPC
-                                                               &lt 3 TAB    &lt NUMROW RET
+                                                               &lt 3 TAB    &lt 1 RET
             >;
         };
 
@@ -98,7 +115,7 @@
             display-name = "numpad";
             bindings = <
                              &kp N7  &kp N8  &kp N9  &kp MINUS          &none  &none      &none      &none
-&none         &kp KP_DIVIDE  &kp N4  &kp N5  &kp N6  &kp EQUAL          &none  &kp RCTRL  &kp RSHFT  &kp RALT  &none     &none
+&none         &kp KP_DIVIDE  &kp N4  &kp N5  &kp N6  &kp EQUAL          &sl 4  &kp RCTRL  &kp RSHFT  &kp RALT  &none     &none
 &kp KP_ENTER  &kp N0         &kp N1  &kp N2  &kp N3  &kp KP_MULTIPLY    &none  &none      &none      &none     &kp RGUI  &studio_unlock
 &none         &kp KP_DOT     &none   &none   &none                             &none      &none      &none     &none     &none
                                                      &kp SPACE          &none
@@ -125,32 +142,32 @@
 &none    &none     &kp LALT  &kp LSHIFT  &kp LCTRL  &none    &kp HOME     &kp LBRC  &kp RBRC  &kp GT    &kp UP    &none
 &kp DEL  &kp LGUI  &none     &none       &none      &none    &kp END      &kp LPAR  &kp RPAR  &kp LEFT  &kp DOWN  &kp RIGHT
 &none    &none     &none     &none       &none                            &none     &none     &none     &none     &none
-                                                    &to 4    &key_repeat
+                                                    &to 5    &key_repeat
                                                     &none    &none
+            >;
+        };
+
+        fn {
+            display-name = "function_keys";
+            bindings = <
+                &kp F7  &kp F8  &kp F9  &none      &none  &none      &none      &none
+&none  &none    &kp F4  &kp F5  &kp F6  &kp F11    &none  &kp RCTRL  &kp RSHFT  &kp RALT  &none     &none
+&none  &kp F10  &kp F1  &kp F2  &kp F3  &kp F12    &none  &none      &none      &none     &kp RGUI  &none
+&none  &none    &none   &none   &none                     &none      &none      &none     &none     &none
+                                        &none      &none
+                                        &none      &none
             >;
         };
 
         game {
             display-name = "gamepad";
             bindings = <
-              &none  &none  &none  &none    &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &to 0
-&none  &none  &none  &none  &none                  &none  &none  &none  &none  &none
-                                   &none    &none
-                                   &none    &none
-            >;
-        };
-
-        layer_5 {
-            display-name = "layer 5";
-            bindings = <
-                       &kp N7  &kp N8  &kp N9  &gresc        &kp BSLH        &kp LBKT  &kp RBKT  &kp LT
-&none       &kp PG_UP  &kp N4  &kp N5  &kp N6  &kp EQUAL     &kp FSLH        &kp LBRC  &kp RBRC  &kp GT    &kp UP           &none
-&caps_word  &kp N0     &kp N1  &kp N2  &kp N3  &kp HOME      &kp END         &kp LPAR  &kp RPAR  &kp LEFT  &kp DOWN         &kp RIGHT
-&none       &kp PG_DN  &none   &none   &none                                 &none     &none     &none     &kp LC(LA(DEL))  &none
-                                               &kp LGUI      &studio_unlock
-                                               &kp LSHIFT    &trans
+                    &kp Q  &kp W  &kp E  &kp R        &none  &none  &none  &none
+&none      &lt 4 T  &kp A  &kp S  &kp D  &kp F        &none  &none  &none  &none  &none  &none
+&kp LSHFT  &kp G    &kp Z  &kp X  &kp C  &kp V        &none  &none  &none  &none  &none  &to 0
+&none      &kp B    &none  &none  &none                      &none  &none  &none  &none  &none
+                                         &kp SPACE    &none
+                                         &tabesc      &none
             >;
         };
     };
