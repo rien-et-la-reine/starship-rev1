@@ -69,20 +69,21 @@
             mods = <(MOD_LALT)>;
         };
 
-        minpl: minpl {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MINPL";
-            bindings = <&kp MINUS>, <&kp EQUAL>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
         tabesc: tabesc {
             compatible = "zmk,behavior-tap-dance";
             label = "TABESC";
             #binding-cells = <0>;
             bindings = <&kp TAB>, <&kp ESC>;
+        };
+
+        taps_word: taps_word {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAPS_WORD";
+            bindings = <&caps_word>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-unless-interrupted";
         };
     };
 
@@ -102,12 +103,12 @@
         base {
             display-name = "alphas";
             bindings = <
-                     &kp W        &kp E          &kp R         &kp T        &kp Y       &kp U         &kp I          &kp O
-&none   &kp Q        &hml LALT S  &hsl LSHIFT D  &hml LCTRL F  &kp G        &kp H       &hmr RCTRL J  &hsr RSHIFT K  &hmr RALT L  &kp P           &none
-&minpl  &hml LGUI A  &kp X        &kp C          &kp V         &kp B        &kp N       &kp M         &kp COMMA      &kp DOT      &hmr RGUI SEMI  &kp APOS
-&none   &kp Z        &none        &none          &none                                  &none         &none          &none        &interrobang    &none
-                                                               &kp SPACE    &lt 2 BSPC
-                                                               &lt 3 TAB    &lt 1 RET
+                                 &kp W        &kp E          &kp R         &kp T        &kp Y       &kp U         &kp I          &kp O
+&none               &kp Q        &hml LALT S  &hsl LSHIFT D  &hml LCTRL F  &kp G        &kp H       &hmr RCTRL J  &hsr RSHIFT K  &hmr RALT L  &kp P           &none
+&taps_word 0 MINUS  &hml LGUI A  &kp X        &kp C          &kp V         &kp B        &kp N       &kp M         &kp COMMA      &kp DOT      &hmr RGUI SEMI  &kp APOS
+&none               &kp Z        &none        &none          &none                                  &none         &none          &none        &interrobang    &none
+                                                                           &kp SPACE    &lt 2 BSPC
+                                                                           &lt 3 TAB    &lt 1 RET
             >;
         };
 
@@ -126,12 +127,12 @@
         sym {
             display-name = "symbols";
             bindings = <
-                       &kp LS(N7)  &kp LS(N8)  &none       &none            &none  &none      &none      &none
-&none       &none      &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp EQUAL        &none  &kp RCTRL  &kp RSHFT  &kp RALT  &none     &none
-&caps_word  &kp GRAVE  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp BACKSLASH    &none  &none      &none      &none     &kp RGUI  &none
-&none       &none      &none       &none       &none                               &none      &none      &none     &none     &none
-                                                           &none            &none
-                                                           &none            &none
+                     &kp LS(N7)  &kp LS(N8)  &none       &none            &none  &none      &none      &none
+&none     &none      &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp EQUAL        &none  &kp RCTRL  &kp RSHFT  &kp RALT  &none     &none
+&kp PLUS  &kp GRAVE  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp BACKSLASH    &none  &none      &none      &none     &kp RGUI  &none
+&none     &none      &none       &none       &none                               &none      &none      &none     &none     &none
+                                                         &none            &none
+                                                         &none            &none
             >;
         };
 
